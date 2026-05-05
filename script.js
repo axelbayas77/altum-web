@@ -163,8 +163,7 @@ formularioContacto.addEventListener("submit", function (e) {
   const mensaje = document.getElementById("mensaje").value;
 
   const texto = `Hola, soy ${nombre}. Mi correo es ${correo}. Quiero información sobre: ${mensaje}`;
-  const numero = "593996241342";
-
+  const numero = "593988955354";
   const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
   window.open(url, "_blank");
