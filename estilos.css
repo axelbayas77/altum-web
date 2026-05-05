@@ -1,0 +1,976 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+}
+
+.encabezado {
+    width: 100%;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: 0.4s ease;
+}
+
+.encabezado.scrolled {
+    background: #1f2421;
+    box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+.menu {
+    width: 90%;
+    margin: auto;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.marca img {
+  width: 160px;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.enlaces {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.enlaces a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.enlaces a:hover {
+    color: #7a8b5a;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(31, 36, 33, 0.75), rgba(31, 36, 33, 0.75)),
+        url("img/fondo-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+.hero-contenido {
+    max-width: 650px;
+    color: #ffffff;
+}
+
+.hero-contenido h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-contenido p {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-bottom: 35px;
+}
+
+.boton {
+    display: inline-block;
+    background: #7a8b5a;
+    color: #ffffff;
+    padding: 15px 35px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.boton:hover {
+    background: #5f6f45;
+}
+
+.seccion {
+    padding: 100px 0;
+}
+
+.contenedor {
+    width: 85%;
+    margin: auto;
+}
+
+h2 {
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.fondo {
+    background: #f5f5f5;
+}
+
+.grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.proyecto {
+    flex: 1;
+    min-width: 250px;
+    height: 200px;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.formulario input,
+.formulario textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.formulario button {
+    padding: 15px;
+    background: #7a8b5a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.formulario button:hover {
+    background: #5f6f45;
+}
+
+/* DISEÑO RESPONSIVE */
+@media (max-width: 768px) {
+
+    .menu {
+        height: auto;
+        padding: 20px 0;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .marca img {
+        width: 130px;
+    }
+
+    .enlaces {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 160px 25px 80px;
+        height: auto;
+        min-height: 100vh;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-contenido h1 {
+        font-size: 38px;
+    }
+
+    .hero-contenido p {
+        font-size: 18px;
+    }
+
+    .grid {
+        flex-direction: column;
+    }
+
+    .seccion {
+        padding: 70px 0;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .formulario {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-contenido h1 {
+        font-size: 32px;
+    }
+
+    .hero-contenido p {
+        font-size: 16px;
+    }
+
+    .boton {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.btn-menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: row;
+        position: relative;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .enlaces {
+        display: none;
+        width: 100%;
+        background: #1f2421;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        padding: 25px 0;
+    }
+
+    .enlaces.activo {
+        display: flex;
+    }
+}
+
+.card {
+    position: relative;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+/* IMÁGENES DE FONDO */
+.diseño {
+    background: url("img/servicio1.jpg") center/cover;
+}
+
+.construccion {
+    background: url("img/servicio2.jpg") center/cover;
+}
+
+.inmobiliaria {
+    background: url("img/servicio3.jpg") center/cover;
+}
+
+/* CAPA OSCURA */
+.overlay-card {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* EFECTO HOVER */
+.card:hover .overlay-card {
+    background: rgba(0, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+.overlay-card h3,
+.overlay-card p {
+    color: white;
+    font-weight: bold;
+}
+
+.overlay-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.overlay-card p {
+    font-size: 16px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #1f2421;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    border: 1px solid #7a8b5a;
+}
+
+.whatsapp:hover {
+    background: #7a8b5a;
+    transform: translateY(-3px);
+    transition: 0.3s;
+}
+
+.diferencial {
+    background: #1f2421;
+    color: white;
+}
+
+.beneficio {
+    flex: 1;
+    min-width: 280px;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* EFECTO HOVER PRO */
+.beneficio:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.beneficio h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.beneficio p {
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+.diferencial h2 {
+    margin-bottom: 50px;
+    font-size: 40px;
+}
+
+/* ANIMACIONES */
+.animado {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.animado.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animado-item {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.7s ease;
+}
+
+.animado.visible .animado-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animado.visible .animado-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.animado.visible .animado-item:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.animado.visible .animado-item:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("img/fondo-hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* CAPA OSCURA SUAVE */
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* CONTENIDO */
+.hero-contenido {
+    position: relative;
+    color: white;
+    max-width: 700px;
+    z-index: 2;
+}
+
+.hero-contenido h1 {
+    font-size: 80px;
+    letter-spacing: 6px;
+    font-weight: 300;
+}
+
+.hero-contenido p {
+    font-size: 22px;
+    margin: 20px 0 40px;
+}
+
+/* BOTONES */
+.hero-botones {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.boton-outline {
+    border: 1px solid white;
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.boton-outline:hover {
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ANIMACIÓN DEL HERO */
+.hero-animado {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: entradaHero 1.2s ease forwards;
+}
+
+@keyframes entradaHero {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer {
+    background: #111411;
+    color: white;
+    padding: 70px 0 20px;
+}
+
+.footer-contenedor {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 160px;
+    margin-bottom: 20px;
+}
+
+.footer-col p {
+    color: #cfcfcf;
+    line-height: 1.6;
+}
+
+.footer-col h3 {
+    margin-bottom: 15px;
+}
+
+.footer-col a {
+    display: block;
+    color: #cfcfcf;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-col a:hover {
+    color: #7a8b5a;
+}
+
+.footer-copy {
+    width: 85%;
+    margin: 40px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #999;
+    font-size: 14px;
+}
+
+.proceso {
+  background: #ffffff;
+}
+
+.paso {
+  flex: 1;
+  min-width: 230px;
+  padding: 35px 25px;
+  border: 1px solid #e5e5e5;
+  background: white;
+  transition: 0.3s;
+}
+
+.paso span {
+  font-size: 38px;
+  color: #7a8b5a;
+  font-weight: bold;
+}
+
+.paso h3 {
+  margin: 15px 0 10px;
+  font-size: 21px;
+}
+
+.paso p {
+  color: #555;
+  line-height: 1.5;
+}
+
+.paso:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 30px rgba(0,0,0,0.08);
+}
+
+.proyecto {
+  height: 230px;
+  background: #eaeaea;
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.3s;
+}
+
+.proyecto:hover {
+  transform: scale(1.03);
+}
+
+.proyecto-info {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+}
+
+.proyecto-info h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.proyecto-info p {
+  font-size: 14px;
+}
+
+.proyecto {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.4s;
+}
+
+.proyecto:hover {
+  transform: scale(1.04);
+}
+
+.proyecto-overlay {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+}
+
+.proyecto-overlay h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.proyecto-overlay p {
+  font-size: 14px;
+}
+.proyecto::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.proyecto:hover::before {
+  background: rgba(0,0,0,0.4);
+}
+
+.carrusel-proyecto {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide.activo {
+  opacity: 1;
+}
+
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(0,0,0,0.35);
+  color: white;
+  border: none;
+  font-size: 32px;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.anterior {
+  left: 12px;
+}
+
+.siguiente {
+  right: 12px;
+}
+
+.proyecto-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+.flecha:hover {
+  background: rgba(0,0,0,0.65);
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox.activo {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 8px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 45px;
+  color: white;
+  cursor: pointer;
+}
+
+/* PROYECTOS EN CELULAR */
+@media (max-width: 768px) {
+
+  #proyectos .grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  #proyectos .proyecto {
+    width: 100%;
+    height: 380px;
+    border-radius: 14px;
+  }
+
+  #proyectos .slide {
+    background-position: center;
+  }
+
+  #proyectos .proyecto-overlay {
+    padding: 25px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.15));
+  }
+
+  #proyectos .proyecto-overlay h3 {
+    font-size: 24px;
+  }
+
+  #proyectos .proyecto-overlay p {
+    font-size: 16px;
+  }
+
+  #proyectos .flecha {
+    width: 42px;
+    height: 42px;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  #proyectos .proyecto {
+    height: 320px;
+  }
+
+  #proyectos .proyecto-overlay h3 {
+    font-size: 21px;
+  }
+
+  #proyectos .proyecto-overlay p {
+    font-size: 14px;
+  }
+}
+
+/* EFECTO HOVER PROYECTOS */
+.proyecto {
+  overflow: hidden;
+  position: relative;
+}
+
+.proyecto .slide {
+  transition: transform 0.6s ease;
+}
+
+.proyecto:hover .slide {
+  transform: scale(1.08);
+}
+
+/* efecto suave en el texto */
+.proyecto-overlay {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.proyecto:hover .proyecto-overlay {
+  transform: translateY(-5px);
+}
+
+.logo-hero {
+  width: 190px;
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+/* ANIMACIÓN LOGO HERO */
+.logo-hero {
+  width: 120px;
+  margin-bottom: 20px;
+
+  opacity: 0;
+  transform: translateY(-30px) scale(0.9);
+  animation: aparecerLogo 1s ease-out forwards;
+}
+
+/* KEYFRAMES */
+@keyframes aparecerLogo {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-contenido h1 {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecerTexto 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.hero-contenido p,
+.hero-contenido .boton {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecerTexto 1s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes aparecerTexto {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* CONTENEDOR PROYECTO */
+.proyecto {
+  position: relative;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* IMÁGENES DEL CARRUSEL */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.slide.activo {
+  opacity: 1;
+}
+
+/* EFECTO HOVER ZOOM */
+.proyecto:hover .slide {
+  transform: scale(1.08);
+}
+
+/* OVERLAY */
+.proyecto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  transition: 0.3s;
+  z-index: 1;
+}
+
+/* OSCURECE MÁS AL HACER HOVER */
+.proyecto:hover::before {
+  background: rgba(0,0,0,0.6);
+}
+
+/* TEXTO */
+.proyecto-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+/* TEXTO MÁS DESTACADO EN HOVER */
+.proyecto:hover .proyecto-overlay {
+  transform: translateY(-5px);
+}
+.proyecto-overlay h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.proyecto-overlay p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+.enlaces a.activo {
+  color: #a3b18a;
+  font-weight: bold;
+}
+#proyectos .animado-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proyecto {
+  position: relative;
+  height: 250px; /* 👈 ESTO ES LO IMPORTANTE */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ARREGLO PROYECTOS EN PANTALLA PEQUEÑA */
+@media (max-width: 768px) {
+
+  #proyectos .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+  }
+
+  #proyectos .proyecto {
+    display: flex !important;
+    width: 100% !important;
+    height: 360px !important;
+    min-height: 360px !important;
+    opacity: 1 !important;
+    transform: none !important;
+    position: relative !important;
+  }
+
+  #proyectos .animado-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  #proyectos .slide {
+    display: block !important;
+  }
+
+  #proyectos .proyecto-overlay {
+    display: block !important;
+    z-index: 5 !important;
+  }
+}
