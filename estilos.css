@@ -57,14 +57,14 @@ body {
 }
 
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(31, 36, 33, 0.75), rgba(31, 36, 33, 0.75)),
-        url("img/fondo-hero.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding-left: 8%;
+  position: relative;
+  height: 100vh;
+  background: url("img/fondo-hero.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-contenido {
@@ -326,26 +326,40 @@ h2 {
 }
 
 .whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #1f2421;
-    color: white;
-    padding: 14px 24px;
-    border-radius: 40px;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
-    z-index: 1000;
-    border: 1px solid #7a8b5a;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #1f2421;
+  color: white;
+  padding: 14px 24px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  border: 1px solid #7a8b5a;
+  animation: pulsoWhatsapp 2s infinite;
 }
 
 .whatsapp:hover {
-    background: #7a8b5a;
-    transform: translateY(-3px);
-    transition: 0.3s;
+  background: #7a8b5a;
+  transform: translateY(-3px);
+  transition: 0.3s;
+  animation: none;
+}
+
+@keyframes pulsoWhatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(122, 139, 90, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(122, 139, 90, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(122, 139, 90, 0);
+  }
 }
 
 .diferencial {
@@ -1070,4 +1084,132 @@ html {
   .contacto-info {
     padding: 25px;
   }
+}
+
+/* ANIMACIONES PRO */
+.animado {
+  opacity: 0;
+  transform: translateY(45px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animado.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animado-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animado.visible .animado-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animado.visible .animado-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.animado.visible .animado-item:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.animado.visible .animado-item:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.animado.visible .animado-item:nth-child(4) {
+  transition-delay: 0.55s;
+}
+
+/* SEGURO PARA QUE NO QUEDE EN BLANCO */
+.animado.visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.animado.visible .animado-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+/* ANIMACIÓN IZQUIERDA */
+.animado-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: all 0.8s ease;
+}
+
+/* ANIMACIÓN DERECHA */
+.animado-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: all 0.8s ease;
+}
+
+/* CUANDO SE ACTIVAN */
+.animado-left.visible,
+.animado-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1f2421;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#loader img {
+  width: 120px;
+  animation: zoomLogo 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes zoomLogo {
+  from {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+#btnTop {
+  position: fixed;
+  bottom: 90px;
+  right: 25px;
+  width: 45px;
+  height: 45px;
+  background: #1f2421;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+}
+
+#btnTop:hover {
+  background: #7a8b5a;
+  transform: translateY(-3px);
+  transition: 0.3s;
 }
