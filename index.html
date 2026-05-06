@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALTUM Bienes Raíces</title>
+    <title>ALTUM Bienes Raíces | Construcción y Diseño</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -48,14 +49,46 @@
     </section>
 
     <!-- NOSOTROS -->
-    <section id="nosotros" class="seccion animado">
-        <div class="contenedor">
-            <h2>Nosotros</h2>
-            <p>
-                En Altum Bienes Raíces nos especializamos en el diseño, desarrollo y ejecución
-                de proyectos arquitectónicos modernos. Combinamos estética, funcionalidad
-                y calidad constructiva para crear espacios únicos y de alto valor.
-            </p>
+    <section id="nosotros" class="seccion nosotros-section animado">
+        <div class="contenedor nosotros-grid">
+
+            <div class="nosotros-texto">
+                <span class="subtitulo">Sobre ALTUM</span>
+                <h2>Construimos espacios con diseño, calidad y visión inmobiliaria</h2>
+
+                <p>
+                    En ALTUM Bienes Raíces y Construcciones desarrollamos proyectos arquitectónicos
+                    modernos, funcionales y pensados para generar valor. Nuestro trabajo integra
+                    diseño, planificación y ejecución técnica para transformar ideas en espacios reales.
+                </p>
+
+                <p>
+                    Acompañamos a cada cliente desde la etapa inicial hasta la entrega del proyecto,
+                    cuidando los detalles constructivos, estéticos y funcionales.
+                </p>
+
+                <div class="nosotros-datos">
+                    <div>
+                        <h3>Diseño</h3>
+                        <span>Moderno y funcional</span>
+                    </div>
+
+                    <div>
+                        <h3>Construcción</h3>
+                        <span>Calidad y técnica</span>
+                    </div>
+
+                    <div>
+                        <h3>Inversión</h3>
+                        <span>Valor inmobiliario</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nosotros-imagen">
+                <img src="img/fondo-hero.jpg" alt="Proyecto arquitectónico ALTUM">
+            </div>
+
         </div>
     </section>
 
@@ -114,36 +147,57 @@
     </section>
 
     <!-- PROCESO DE TRABAJO -->
-    <section id="proceso" class="seccion proceso animado">
-        <div class="contenedor">
-            <h2>Nuestro proceso</h2>
+    <section class="valores-section">
 
-            <div class="grid">
-                <div class="paso animado-item">
-                    <span>01</span>
-                    <h3>Idea inicial</h3>
-                    <p>Escuchamos tus necesidades y analizamos el alcance del proyecto.</p>
-                </div>
-
-                <div class="paso animado-item">
-                    <span>02</span>
-                    <h3>Diseño y planificación</h3>
-                    <p>Desarrollamos una propuesta funcional, estética y técnicamente viable.</p>
-                </div>
-
-                <div class="paso animado-item">
-                    <span>03</span>
-                    <h3>Ejecución</h3>
-                    <p>Coordinamos la construcción cuidando calidad, tiempos y detalles.</p>
-                </div>
-
-                <div class="paso animado-item">
-                    <span>04</span>
-                    <h3>Entrega</h3>
-                    <p>Finalizamos el proyecto con revisión técnica y acompañamiento al cliente.</p>
-                </div>
-            </div>
+        <div class="valores-imagen">
+            <img src="img/construccion.jpg" alt="">
+            <h2>LO QUE NOS<br>CARACTERIZA</h2>
         </div>
+
+        <div class="valores-grid">
+
+            <div class="valor-item">
+
+                <div class="valor-header">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>EXCELENCIA</h3>
+                </div>
+
+                <p>
+                    Desarrollamos proyectos con altos estándares de calidad, cuidando cada detalle constructivo y
+                    arquitectónico.
+                </p>
+
+            </div>
+
+            <div class="valor-item">
+                <div class="valor-header">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>INNOVACIÓN</h3>
+                </div>
+                <p>Aplicamos soluciones modernas y funcionales para crear espacios eficientes y con identidad propia.
+                </p>
+            </div>
+
+            <div class="valor-item">
+                <div class="valor-header">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>COMPROMISO</h3>
+                </div>
+                <p>Trabajamos junto a nuestros clientes en cada etapa del proyecto, garantizando confianza y
+                    acompañamiento.</p>
+            </div>
+
+            <div class="valor-item">
+                <div class="valor-header">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <h3>INTEGRIDAD</h3>
+                </div>
+                <p>Actuamos con responsabilidad, transparencia y profesionalismo en cada obra y servicio.</p>
+            </div>
+
+        </div>
+
     </section>
 
     <!-- PROYECTOS -->
@@ -271,15 +325,19 @@
 
     <a href="https://wa.me/593988955354?text=Hola,%20estoy%20interesado%20en%20un%20proyecto%20con%20ALTUM."
         class="whatsapp" target="_blank">
-        <span>WhatsApp</span>
-    </a>
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>WhatsApp</span> </a>
     <div id="lightbox" class="lightbox">
         <span class="cerrar">×</span>
         <img id="imgLightbox">
     </div>
+
+    <button id="btnTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
     <script src="script.js"></script>
 
-    <button id="btnTop">↑</button>
+
 </body>
 
 </html>

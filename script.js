@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ANIMACIONES
-const elementosAnimados = document.querySelectorAll(".animado, .animado-left, .animado-right");
+  const elementosAnimados = document.querySelectorAll(".animado, .animado-left, .animado-right");
   function activarAnimaciones() {
     elementosAnimados.forEach((elemento) => {
       const posicion = elemento.getBoundingClientRect().top;
@@ -167,30 +167,34 @@ const elementosAnimados = document.querySelectorAll(".animado, .animado-left, .a
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
-  setTimeout(() => {
-    loader.style.opacity = "0";
-    loader.style.transition = "0.5s";
-
+  if (loader) {
     setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
-  }, 1200); // tiempo que se ve el loader
+      loader.style.opacity = "0";
+      loader.style.transition = "0.5s";
+
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 500);
+    }, 1200);
+  }
 });
 
 // BOTÓN VOLVER ARRIBA
 const btnTop = document.getElementById("btnTop");
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    btnTop.style.display = "block";
-  } else {
-    btnTop.style.display = "none";
-  }
-});
-
-btnTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+if (btnTop) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnTop.style.display = "block";
+    } else {
+      btnTop.style.display = "none";
+    }
   });
-});
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
